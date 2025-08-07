@@ -50,20 +50,21 @@ JavaScript-Projects/
 ```
 
 💡 What I Learned
-   Practiced real-world JavaScript applications
+   - Practiced real-world JavaScript applications
 
-   Improved DOM and event handling skills
+   - Improved DOM and event handling skills
 
-   Understood how to work with APIs
+   - Understood how to work with APIs
 
-   Gained confidence in debugging and UI interactions
+   - Gained confidence in debugging and UI interactions
+   - 
 
 📬 Connect with Me
 
-   💼 LinkedIn: www.linkedin.com/in/rakesh-codes
+   - 💼 LinkedIn: www.linkedin.com/in/rakesh-codes
 
-   GeeksForGeeks: https://www.geeksforgeeks.org/user/thalaforrxxn0/
+   - GeeksForGeeks: https://www.geeksforgeeks.org/user/thalaforrxxn0/
    
-   📧 Email: 014rakeshofficial@gmail.com
+   - 📧 Email: 014rakeshofficial@gmail.com
 
 ⭐ If you like this repo, consider giving it a star and sharing it with your friends!
