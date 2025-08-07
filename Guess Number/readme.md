@@ -6,7 +6,6 @@ A fun JavaScript-based number guessing game where users try to guess a randomly 
 
 - Random number generation
 - Sound effects for success and failure 🎵
-- Responsive design (mobile + desktop)
 - Score counter
 - Hint for “too high” or “too low”
 
