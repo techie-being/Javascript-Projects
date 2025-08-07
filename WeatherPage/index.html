@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Checker</title>
+  <style>
+    body {
+      background-color: #1e1e2f;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      text-align: center;
+      padding: 30px;
+    }
+
+    input {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      margin: 10px;
+      width: 250px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      margin-top: 30px;
+      font-size: 20px;
+    }
+
+    #result p {
+      margin: 10px 0;
+      color: #f0f0f0;
+    }
+
+    #error {
+      color: red;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌤️ Weather Checker</h1>
+
+  <input type="text" id="cityInput" placeholder="Enter city name..." />
+  <button id="checkBtn">Check Weather</button>
+
+  <div id="error"></div>
+
+  <div id="result">
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <p id="p5"></p>
+  </div>
+
+  <script>
+    const cityInput = document.getElementById('cityInput');
+    const button = document.getElementById('checkBtn');
+    const errorDiv = document.getElementById('error');
+
+    const p1 = document.getElementById("p1");
+    const p2 = document.getElementById("p2");
+    const p3 = document.getElementById("p3");
+    const p4 = document.getElementById("p4");
+    const p5 = document.getElementById("p5");
+
+    button.addEventListener("click", () => {
+      const city = cityInput.value.trim();
+
+      if (city === "") {
+        errorDiv.textContent = "Please enter a city name.";
+        return;
+      }
+
+      errorDiv.textContent = ""; // Clear any old error
+
+      fetch(`https://wttr.in/${city}?format=j1`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("City not found");
+          }
+          return response.json();
+        })
+        .then(data => {
+          const current = data.current_condition[0];
+          p1.textContent = `Temperature: ${current.temp_C}°C`;
+          p2.textContent = `Feels Like: ${current.FeelsLikeC}°C`;
+          p3.textContent = `Humidity: ${current.humidity}%`;
+          p4.textContent = `Condition: ${current.weatherDesc[0].value}`;
+          p5.textContent = `Wind Speed: ${current.windspeedKmph} KM/h`;
+        })
+        .catch(error => {
+          errorDiv.textContent = "Could not fetch weather for the entered city.";
+          p1.textContent = "";
+          p2.textContent = "";
+          p3.textContent = "";
+          p4.textContent = "";
+          p5.textContent = "";
+        });
+    });
+  </script>
+
+</body>
+</html>
