@@ -38,12 +38,12 @@
 ---
 
 ## 🗂 Folder Structure
-
+<pre lang = "markdown"> ```
 digital-clock/
 ├── index.html # Main HTML file
 ├── style.css # Styling
 └── script.js # Clock logic
-
+``` </pre>
 ## 🚀 Getting Started
 
 1. Clone the repository:
